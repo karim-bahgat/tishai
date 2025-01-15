@@ -1,9 +1,4 @@
-
-
-
-# hello 
-#kljdljdljk
-import time
+"""The TISControl integration."""
 
 from __future__ import annotations
 
