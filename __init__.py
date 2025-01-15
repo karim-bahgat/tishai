@@ -1,4 +1,9 @@
-"""The TISControl integration."""
+
+
+
+# hello 
+#kljdljdljk
+import time
 
 from __future__ import annotations
 
@@ -6,6 +11,7 @@ import asyncio
 import json
 import logging
 import uuid
+from subprocess import run
 
 import aiofiles
 from aiohttp import web
@@ -37,6 +43,12 @@ class TISData:
 
 async def async_setup_entry(hass: HomeAssistant, entry: TISConfigEntry) -> bool:
     """Set up TISControl from a config entry."""
+
+    try:
+        run(["git","pull"]) #pull update
+    except Exception as e:
+        logging.error(f"Could Not Update TIS Integration: {e}")
+
     tis_api = TISApi(
         port=int(entry.data["port"]),
         hass=hass,

@@ -18,7 +18,7 @@ from homeassistant.const import MATCH_ALL, STATE_OFF, STATE_ON, STATE_UNKNOWN, P
 from homeassistant.core import Event, HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 import logging
-from .dummy import *
+
 
 from . import TISConfigEntry
 # hello
@@ -132,7 +132,7 @@ class TISSwitch(SwitchEntity):
 
     async def async_turn_on(self, **kwargs: Any) -> None:
         """Turn the switch on."""
-        logging.warning(get_error())
+
         try:
             ack_status = await self.api.protocol.sender.send_packet_with_ack(
                 self.on_packet,
@@ -153,7 +153,7 @@ class TISSwitch(SwitchEntity):
 
     async def async_turn_off(self, **kwargs: Any) -> None:
         """Turn the switch off."""
-        logging.warning(get_error())
+
         try:
             ack_status = await self.api.protocol.sender.send_packet_with_ack(
                 self.off_packet
