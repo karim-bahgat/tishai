@@ -12,7 +12,7 @@ from homeassistant.components.climate import (
     UnitOfTemperature,
 )
 
-DOMAIN = "tis_control"
+DOMAIN = "tishai"
 
 DEVICES_DICT = {
     (0x1B, 0xBA): "RCU-8OUT-8IN",
